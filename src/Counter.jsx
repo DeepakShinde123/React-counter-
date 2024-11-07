@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-function Counter() {
-  const [counter, setCounter] = useState(0);
+function Counter({ start = 0, update = 1, danger = false }) {
+  const [counter, setCounter] = useState(+start);
 
   const handleClick = (type) => {
     if (type === "minus") {
-      setCounter(counter - 1);
+      setCounter(counter - update);
       return;
     }
 
-    setCounter(counter + 1);
+    setCounter(counter + update);
   };
 
   return (
